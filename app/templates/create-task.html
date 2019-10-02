@@ -1,0 +1,20 @@
+<div class="create-task mx-auto col-6 slide-left " ng-if='view==="create"'>
+    <div class="col-8 border border-secondary rounded p-4  shadow">
+        <form >
+            <div class="form-group">
+                <label for="headerTask">Header task </label>
+                <input   ng-model='task.tasktitle' type="text" class="form-control" aria-describedby='headerTaskSmall' id="headerTask">
+            </div>
+            <div class="form-group">
+                <label for="textTask">Text task</label>
+                <input  ng-model = 'task.tasktext'  class="form-control" type="" name="" id="textTask">
+            </div>
+            <div class="form-group form-check">
+                <input  type="checkbox" class="form-check-input" ng-model = 'task.important' name="" id="taskImportant">
+                <label for="taskImportant">Important</label>
+            </div>
+            <button type="submit"  ng-click='createTask()' class="btn btn-outline-primary ">create</button>
+        </form>
+    
+    </div>
+</div>

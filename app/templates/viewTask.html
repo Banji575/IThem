@@ -1,0 +1,17 @@
+<div class="row" ng-if='view==="view"'>
+    <div class="col-sm-8 mx-auto d-flex align-items-streth flex-wrap ">
+        <div class="col-sm-3 m-1 toggle "  ng-repeat='task in tasks track by $index'>
+            <div ng-class= 'task.important === true? "card bg-danger shadow scale-fade  ":"card shadow scale-fade" '>
+                <div class="card-body ">
+                    <h5 class="card-title ">{{task.tasktitle}}</h5>
+                    <p class="card-text">{{task.tasktext}}</p>
+                    <div class="btn-group">
+                        <buttton ng-click='createImportant($index,$event)' class="btn btn-secondary"> Важно</buttton>
+                        <buttton ng-click = 'endTask($index)' class="btn btn-secondary">Сделано</buttton>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

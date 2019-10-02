@@ -1,0 +1,24 @@
+{
+  "name": "angularpostgres",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "ng-animate": "^0.3.4",
+    "angular-jwt": "^0.1.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Banji575/IThem.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Banji575/IThem/issues"
+  },
+  "homepage": "https://github.com/Banji575/IThem#readme",
+  "description": ""
+}
