@@ -10,14 +10,11 @@ function HomePageFactory($http, $cookies) {
             $http.defaults.headers.common['token'] = `Token ${$cookies.get('token')}`
         }
     }
-    Content.test = 'Content test'
     Content.getPosts = () => {
         if (typeof $cookies.get('token') !== 'undefined') {
             $http.defaults.headers.common['token'] = `Token ${$cookies.get('token')}`
         }
         $http.get('http://localhost:4000/getPosts')
-
-
     }
     Content.sendPost = async (PostBody) => {
     Content.addHeader()

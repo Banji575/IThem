@@ -1,107 +1,120 @@
-
-  <header class="blog-header py-3   " ng-controller='loginCtrl as lc'>
-    <div class="row flex-nowrap justify-content-between align-items-center">
-      <div class="col-md-4 pt-1">
-        <a class="text-muted" href="#/home">Home</a>
-      </div>
-      <div class="col-md-4 text-center">
-        <a class="blog-header-logo text-dark" href="#"><img src="./img/logo.png" width="200rem" height="80rem" alt=""></a>
-      </div>
-      <div class="col-md-4 d-flex justify-content-end align-items-center">
-        <a class="text-muted" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3" focusable="false" role="img"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></svg>
-        </a>
-        <a href="#"  class="btn btn-sm text-secondary " ng-show = 'lc.isAuthorized()' >{{lc.isAuthorized()}}</a>
-        <a class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModal" href="#/"  ng-hide = 'lc.isAuthorized()'>Sign up</a>
-        <a class="btn btn-sm btn-outline-secondary ml-1"  href="#/registration" ng-hide = 'lc.isAuthorized()'>Registration</a>
-        <a class="btn btn-sm btn-outline-secondary" href="#/" ng-show = 'lc.isAuthorized()' ng-click='lc.logout()'>Logout</a>
-      </div>
+<header class="blog-header py-3   " ng-controller='loginCtrl as lc'>
+  <div class="row flex-nowrap justify-content-between align-items-center">
+    <div class="col-md-4 pt-1">
+      <a class="text-muted" href="#/home">Home</a>
     </div>
-  </header>
-  <div class="nav-scroller py-1 mb-2 border-top border-dark"  ng-controller='loginCtrl as lc'>
-        <nav class="nav d-flex justify-content-between" ng-show = 'lc.isAuthorized()'>
-          <a class="p-2 text-muted" href="#">World</a>
-          <a class="p-2 text-muted" href="#">U.S.</a>
-          <a class="p-2 text-muted" href="#">Technology</a>
-          <a class="p-2 text-muted" href="#">Design</a>
-          <a class="p-2 text-muted" href="#">Culture</a>
-          <a class="p-2 text-muted" href="#">Business</a>
-          <a class="p-2 text-muted" href="#">Politics</a>
-          <a class="p-2 text-muted" href="#">Opinion</a>
-          <a class="p-2 text-muted" href="#">Science</a>
-          <a class="p-2 text-muted" href="#">Health</a>
-          <a class="p-2 text-muted" href="#">Style</a>
-          <a class="p-2 text-muted" href="#">Travel</a>
-        </nav>
-    
+    <div class="col-md-4 text-center">
+      <a class="blog-header-logo text-dark" href="#"><img src="./img/logo.png" width="200rem" height="80rem" alt=""></a>
+    </div>
+    <div class="col-md-4 d-flex justify-content-end align-items-center">
+      <a class="text-muted" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-3"
+          focusable="false" role="img">
+          <title>Search</title>
+          <circle cx="10.5" cy="10.5" r="7.5"></circle>
+          <line x1="21" y1="21" x2="15.8" y2="15.8"></line>
+        </svg>
+      </a>
+      <a href="#" class="btn btn-sm text-secondary " ng-show='lc.isAuthorized()'>{{lc.isAuthorized()}}</a>
+      <a class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModal" href="#/"
+        ng-hide='lc.isAuthorized()'>Sign up</a>
+      <a class="btn btn-sm btn-outline-secondary ml-1" href="#/registration"
+        ng-hide='lc.isAuthorized()'>Registration</a>
+      <a class="btn btn-sm btn-outline-secondary" href="#/" ng-show='lc.isAuthorized()'
+        ng-click='lc.logout()'>Logout</a>
+    </div>
+  </div>
+</header>
+<div class="nav-scroller py-1 mb-2 border-top border-dark" ng-controller='loginCtrl as lc'>
+  <nav class="nav d-flex justify-content-between" ng-show='lc.isAuthorized()'>
+    <a class="p-2 text-muted" href="#">World</a>
+    <a class="p-2 text-muted" href="#">U.S.</a>
+    <a class="p-2 text-muted" href="#">Technology</a>
+    <a class="p-2 text-muted" href="#">Design</a>
+    <a class="p-2 text-muted" href="#">Culture</a>
+    <a class="p-2 text-muted" href="#">Business</a>
+    <a class="p-2 text-muted" href="#">Politics</a>
+    <a class="p-2 text-muted" href="#">Opinion</a>
+    <a class="p-2 text-muted" href="#">Science</a>
+    <a class="p-2 text-muted" href="#">Health</a>
+    <a class="p-2 text-muted" href="#">Style</a>
+    <a class="p-2 text-muted" href="#">Travel</a>
+  </nav>
 
-      <div class="nav-scroller py-1 mb-2 border border-white"  ng-controller='loginCtrl as lc'  ng-show = 'lc.isAuthorized()'>
-        <nav class="nav d-flex justify-content-center">
-          <a class="p-2 text-muted " href="#/newPost">New post</a>
-        </nav>
-      </div>
+
+
+<div class="col-md-2 mx-auto ">
+    <button ng-controller='loginCtrl as lc' ng-show='lc.isAuthorized()' class="btn btn-outline-secondary mx-auto" type="button"
+    data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    New post
+  </button>
 </div>
+ 
+  
+</div>
+
 
 
 <!-- Modal sing up -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="false" ng-controller='loginCtrl as lc'>
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-               
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container p-0 mt-1 mb-1"><span class="text-danger" id="incorrect">{{lc.incorrect}}</span></div>
-                <form action="" >
-                    <div class="form-group">
-                        <label for="userName"> User name</label>
-                        <input autofocus type="text" name="" id="userName" class="form-control" ng-model='lc.credential.userName' >
-                    </div>
-                    <div class="form-group">
-                        <label for="password"> Password</label>
-                        <input type="password" name="" id="password" class="form-control" ng-model='lc.credential.password' >
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-secondary"  ng-click = 'lc.userLogin()'>Save changes</button>
-            </div>
-        </div>
+  aria-hidden="false" ng-controller='loginCtrl as lc'>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container p-0 mt-1 mb-1"><span class="text-danger" id="incorrect">{{lc.incorrect}}</span></div>
+        <form action="">
+          <div class="form-group">
+            <label for="userName"> User name</label>
+            <input autofocus type="text" name="" id="userName" class="form-control" ng-model='lc.credential.userName'>
+          </div>
+          <div class="form-group">
+            <label for="password"> Password</label>
+            <input type="password" name="" id="password" class="form-control" ng-model='lc.credential.password'>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" ng-click='lc.userLogin()'>Save changes</button>
+      </div>
     </div>
+  </div>
 </div>
 <!-- Modal registration -->
 <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="false" ng-controller='loginCtrl as lc'>
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="" >
-                    <div class="form-group">
-                        <label for="userName"> User name</label>
-                        <input type="text" name="" id="userNameReg" class="form-control" >
-                    </div>
-                    <div class="form-group">
-                        <label for="password"> Password</label>
-                        <input type="password" name="" id="passwordReg" class="form-control"  >
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-secondary"  ng-click = 'lc.userLogin()'>Registration</button>
-            </div>
-        </div>
+  aria-hidden="false" ng-controller='loginCtrl as lc'>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="">
+          <div class="form-group">
+            <label for="userName"> User name</label>
+            <input type="text" name="" id="userNameReg" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="password"> Password</label>
+            <input type="password" name="" id="passwordReg" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" ng-click='lc.userLogin()'>Registration</button>
+      </div>
     </div>
+  </div>
 </div>
