@@ -10,17 +10,23 @@ function HomePageFactory($http, $cookies) {
             $http.defaults.headers.common['token'] = `Token ${$cookies.get('token')}`
         }
     }
-    Content.getPosts = () => {
+    Content.getPosts = async () => {
         if (typeof $cookies.get('token') !== 'undefined') {
             $http.defaults.headers.common['token'] = `Token ${$cookies.get('token')}`
         }
-        $http.get('http://localhost:4000/getPosts')
+        console.log('getPosts factory')
+        const data = await $http.get('http://localhost:4000/getPosts')
+        Content.posts = data.data
+        return data.data
+
+
     }
     Content.sendPost = async (PostBody) => {
-    Content.addHeader()
-        const connect = await $http.post('http://localhost:4000/test', PostBody)
+        Content.addHeader()
+        const connect = await $http.post('http://localhost:4000/sendPost', PostBody)
         const data = await connect
         console.log(data)
+        /* console.log(PostBody) */
 
 
     }

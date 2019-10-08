@@ -38,10 +38,8 @@ const createSign = (data, secretKey) => {
 }
 
 const isAuthorized = (req, res, next) => {
-    /* console.log(req.headers.token) */
     if (typeof req.headers.token !== "undefined") {
         const token = req.headers.token.split(' ')[1]
-        console.log(token)
         jwt.verify(token, secretKey, {
             algorithms: 'HS256'
         }, (err, decoded) => {
@@ -51,16 +49,14 @@ const isAuthorized = (req, res, next) => {
                 })
             }
             next()
-            console.log(decoded)
         })
-        
+
     } else {
         console.log('No authorized')
     }
 }
 
 app.post('/', (req, res) => {
-    console.log(req.body)
     res.send('ok')
 })
 
@@ -90,35 +86,27 @@ app.post('/login', async (req, res) => {
     } catch (error) {
         console.log(error)
     }
-
-
 })
 
 app.get('/', (req, res) => {
-    console.log('test cors')
 
 })
-app.get('/getPosts', isAuthorized, (req, res) => {
-    console.log('ok')
+app.get('/getPosts', isAuthorized, async (req, res) => {
+    const query = 'SELECT * FROM posts'
+    const data = await connectDb(query)
+    console.log(data)
+    res.send(data)
 })
 app.post('/sendPost', isAuthorized, async (req, res) => {
-    /*  const query = 'INSERT INTO posts (title, date, author, body, tag) VALUES ($1,$2,$3,$4,$5)'
-     const {title, data, author, body, tag} = req.body
-     try {
+    const query = 'INSERT INTO posts (title, date, author, body, tag) VALUES ($1,$2,$3,$4,$5)'
+    const array = req.body
+    array.forEach(async el=>{
+        const {title, data, author, body, tag} = el
         const connect = await connectDb(query, [title,data, author, body, tag])
-         console.log('Запись успешно добавлена', connect)
-         res.send('Запись успешно добавлена')
-         
-     } catch (error) {
-         res.status(401)
-         
-     } */
-    console.log(req.body)
-
+    })
 })
 
 app.post('/test', isAuthorized, (req, res) => {
-    console.log(req.body)
 })
 
 
