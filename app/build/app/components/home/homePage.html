@@ -1,17 +1,24 @@
 <main role="main" class="container">
   <div class="row " ng-controller='homePageCtrl as hc'>
-    
+
 
     <div class="col-md-8 blog-main mx-auto">
       <div class="collapse " id="collapseExample">
-        <input class="form-control" type="text" name="" id="">
+        <div class="d-flex">
+          <div class="mr-2">{{hc.currentDate()}}</div>
+          <div><a href="#">{{hc.username}}</a></div>
+        </div>
+
+        <input id="postTitle" class="form-control mb-2" type="text" name="" id="" placeholder="Post title">
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
       </div>
       <div class="blog-post" ng-repeat='post in hc.postArr'>
         <h3 class="pb-3 mb-4 font-italic border-bottom">
           {{post.title}}
         </h3>
         <p class="blog-post-meta">{{post.date | date: 'd-MMM-yy'}} <a href="#">{{post.author}}</a></p>
-        <p compile='{{post.body}}'></p>
+        <p class="bg-light" compile='{{post.body}}'></p>
 
       </div>
       <button class="btn btn-secondary" ng-click='hc.getPosts()'>test</button>

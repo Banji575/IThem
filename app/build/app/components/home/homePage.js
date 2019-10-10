@@ -14,10 +14,16 @@
             }
         })
 
-    HomePageCtrl.$ingect = ['$scope', 'HomePageFactory']
+    HomePageCtrl.$ingect = ['$scope', 'HomePageFactory', 'Login']
 
-    function HomePageCtrl($scope, HomePageFactory) {
+    function HomePageCtrl($scope, HomePageFactory,Login) {
         const vm = this;
+        vm.username = Login.getUsername()
+        vm.currentDate = function(){
+            const date = new Date()
+            const month = ['Jan', 'Feb','Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            return `${date.getDate()}-${month[date.getMonth()]}-${date.getFullYear()}`
+        } 
         vm.postArr = []
 
         vm.getPosts = async function () {
