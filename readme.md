@@ -1,2 +1,3 @@
 # IThem
-Simple blog engine in angularja client side and nodejs in server side
+Simple blog engine in angularjs client side and nodejs in server side
+
